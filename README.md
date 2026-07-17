@@ -1,3 +1,4 @@
+
 # Smart ICU Equipment Predictive Monitoring & Analytics Platform
 
 ### A Data Engineering + Analytics + Machine Learning Capstone Project (Conceptual Healthcare Context)
@@ -114,9 +115,8 @@ GE-Healthcare-Capstone/
 ├── app.py                                   # Streamlit application dashboard
 ├── requirements.txt                         # Package dependencies
 └── README.md                                # Project landing page documentation
-```
+=======
 
----
 
 ## 7. System Architecture & ETL Workflow
 
@@ -183,9 +183,41 @@ flowchart LR
     E -->|Temp Diff, Util %, Health Score, Risk Index| F[Dataset Versioning: processed_v1.csv]
     F --> G[SQLite Loader]
     G --> H[(sql/healthcare_maintenance.db)]
+=======
+# 📊 Project Workflow
+
 ```
+Business Problem
+        │
+        ▼
+Data Collection
+        │
+        ▼
+Data Understanding
+        │
+        ▼
+Data Cleaning
+        │
+        ▼
+Exploratory Data Analysis
+        │
+        ▼
+Feature Engineering
+        │
+        ▼
+SQL Analytics
+        │
+        ▼
+Power BI Dashboard
+        │
+        ▼
+Machine Learning
+        │
+        ▼
+Business Insights & Recommendations
 
 ---
+
 
 ## 8. Machine Learning & Performance
 The platform trains and evaluates Logistic Regression (baseline), Random Forest (primary), and XGBoost (benchmark).
@@ -282,3 +314,110 @@ To expand this conceptual prototype into a clinical-grade hospital system, reali
 
 ## 15. License
 This project is licensed under the MIT License - see the standard [MIT License](https://opensource.org/licenses/MIT) terms for details.
+=======
+# 📈 Key Performance Indicators (KPIs)
+
+The platform focuses on operational and maintenance KPIs such as:
+
+- Machine Failure Rate
+- Average Tool Wear
+- Average Torque
+- Average Rotational Speed
+- Average Operating Temperature
+- Failure Distribution
+- Failure by Product Type
+- Failure by Failure Mode
+- Machine Health Score (Derived)
+- Risk Score (Derived)
+
+---
+
+# 📊 Dashboard Modules
+
+### Executive Dashboard
+
+- Overall Machine Health
+- Production Overview
+- Failure Rate
+- Operational KPIs
+
+### Machine Performance Dashboard
+
+- RPM Analysis
+- Torque Distribution
+- Tool Wear Analysis
+- Temperature Monitoring
+
+### Failure Analytics Dashboard
+
+- Failure Trends
+- Failure Categories
+- Root Cause Analysis
+
+### Predictive Maintenance Dashboard
+
+- Failure Prediction
+- High-Risk Machines
+- Feature Importance
+- Model Performance
+
+---
+
+# 📅 Development Roadmap
+
+- [x] Project Planning
+- [x] Repository Setup
+- [ ] Data Understanding
+- [ ] Data Cleaning
+- [ ] Exploratory Data Analysis
+- [ ] Feature Engineering
+- [ ] SQL Analysis
+- [ ] Dashboard Development
+- [ ] Machine Learning
+- [ ] Business Report
+- [ ] Final Documentation
+
+---
+
+# 🎓 Learning Outcomes
+
+This project demonstrates practical experience in:
+
+- Industrial Data Analytics
+- Exploratory Data Analysis
+- Data Cleaning
+- Feature Engineering
+- SQL Querying
+- Business Intelligence
+- Dashboard Design
+- Predictive Analytics
+- Machine Learning
+- Technical Documentation
+
+---
+
+# 🚀 Future Enhancements
+
+- Real-time dashboard integration
+- Streaming sensor data
+- Automated ETL pipeline
+- Cloud deployment
+- REST API for predictions
+- IoT integration
+
+---
+
+# 📜 Acknowledgements
+
+This project uses the **AI4I 2020 Predictive Maintenance Dataset** developed by **Stephan Matzka**.
+
+Reference:
+
+S. Matzka, *Explainable Artificial Intelligence for Predictive Maintenance Applications*, 2020 Third International Conference on Artificial Intelligence for Industries (AI4I), pp. 69–74.
+
+---
+
+## 👨‍💻 Author
+
+Developed as a portfolio project to simulate the responsibilities of a **Project Intern – Manufacturing Data Analytics**, demonstrating an end-to-end analytics workflow from raw industrial data to actionable business insights.
+
