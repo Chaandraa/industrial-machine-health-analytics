@@ -117,74 +117,7 @@ GE-Healthcare-Capstone/
 └── README.md                                # Project landing page documentation
 =======
 
-
-## 7. System Architecture & ETL Workflow
-
-### System Architecture Diagram
-```mermaid
-graph TD
-    subgraph "Data Storage"
-        RawCSV[data/raw/predictive_maintainance.csv]
-        CleanCSV[data/cleaned/cleaned_v1.csv]
-        ProcessedCSV[data/processed/processed_v1.csv]
-        SQLiteDB[(sql/healthcare_maintenance.db)]
-    end
-
-    subgraph "Data Engineering & Processing"
-        DataLoader[src/data_loader.py]
-        Prep[src/preprocessing.py]
-        FE[src/feature_engineering.py]
-    end
-
-    subgraph "Analytics & Modeling"
-        Notebooks[notebooks/ 01-07]
-        SQLQueries[sql/queries.sql]
-        ModelRF[models/random_forest_v1.joblib]
-        ModelLR[models/logistic_regression_v1.joblib]
-        ModelMeta[models/model_metadata.json]
-    end
-
-    subgraph "User Interface & Reporting"
-        StreamlitApp[app.py Streamlit App]
-        PBIBlue[powerbi/powerbi_design_guide.md]
-        Docs[reports/ & docs/]
-    end
-
-    %% Data Flow
-    RawCSV --> DataLoader
-    DataLoader --> Prep
-    Prep -->|Validates & Cleans| CleanCSV
-    CleanCSV --> FE
-    FE -->|Engineers Features & Timestamps| ProcessedCSV
-    ProcessedCSV --> SQLiteDB
-    ProcessedCSV --> Notebooks
-    SQLiteDB --> SQLQueries
-    ProcessedCSV --> ModelRF
-    ProcessedCSV --> ModelLR
-    ModelRF --> ModelMeta
-    ModelLR --> ModelMeta
-    
-    %% Output to App and Reports
-    SQLiteDB --> StreamlitApp
-    ModelRF --> StreamlitApp
-    ModelLR --> StreamlitApp
-    ProcessedCSV --> StreamlitApp
-    StreamlitApp --> PBIBlue
-    PBIBlue --> Docs
-```
-
-### ETL Pipeline Diagram
-```mermaid
-flowchart LR
-    A[Raw CSV] --> B[Data Validation]
-    B -->|Check Schema & Ranges| C[Data Cleaning]
-    C -->|Kelvin to Celsius, Remove Duplicates| D[Dataset Versioning: cleaned_v1.csv]
-    D --> E[Feature Engineering]
-    E -->|Temp Diff, Util %, Health Score, Risk Index| F[Dataset Versioning: processed_v1.csv]
-    F --> G[SQLite Loader]
-    G --> H[(sql/healthcare_maintenance.db)]
-=======
-# 📊 Project Workflow
+## 7. 📊 Project Workflow
 
 ```
 Business Problem
@@ -281,57 +214,6 @@ To expand this conceptual prototype into a clinical-grade hospital system, reali
 
 ---
 
-## 13. Quick Start & Execution Guide
-
-### Local Environment Setup
-1. Clone the repository and navigate to the project directory.
-2. Activate your virtual environment and install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Run the ETL pipeline to validate raw data, generate features, and load the SQLite database:
-   ```bash
-   python -m src.pipeline
-   ```
-4. Run the machine learning pipeline to train models and generate the evaluation metadata:
-   ```bash
-   python -m src.model_training
-   ```
-5. Launch the Streamlit dashboard app:
-   ```bash
-   streamlit run app.py
-   ```
-6. Open your browser and navigate to `http://localhost:8501` to interact with the dashboards.
-
----
-
-## 14. Author
-- **Name**: [Your Name]  
-- **GitHub**: [github.com/yourusername](https://github.com/yourusername)  
-- **LinkedIn**: [linkedin.com/in/yourusername](https://linkedin.com/in/yourusername)
-
----
-
-## 15. License
-This project is licensed under the MIT License - see the standard [MIT License](https://opensource.org/licenses/MIT) terms for details.
-=======
-# 📈 Key Performance Indicators (KPIs)
-
-The platform focuses on operational and maintenance KPIs such as:
-
-- Machine Failure Rate
-- Average Tool Wear
-- Average Torque
-- Average Rotational Speed
-- Average Operating Temperature
-- Failure Distribution
-- Failure by Product Type
-- Failure by Failure Mode
-- Machine Health Score (Derived)
-- Risk Score (Derived)
-
----
-
 # 📊 Dashboard Modules
 
 ### Executive Dashboard
@@ -420,4 +302,55 @@ S. Matzka, *Explainable Artificial Intelligence for Predictive Maintenance Appli
 ## 👨‍💻 Author
 
 Developed as a portfolio project to simulate the responsibilities of a **Project Intern – Manufacturing Data Analytics**, demonstrating an end-to-end analytics workflow from raw industrial data to actionable business insights.
+
+## 13. Quick Start & Execution Guide
+
+### Local Environment Setup
+1. Clone the repository and navigate to the project directory.
+2. Activate your virtual environment and install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Run the ETL pipeline to validate raw data, generate features, and load the SQLite database:
+   ```bash
+   python -m src.pipeline
+   ```
+4. Run the machine learning pipeline to train models and generate the evaluation metadata:
+   ```bash
+   python -m src.model_training
+   ```
+5. Launch the Streamlit dashboard app:
+   ```bash
+   streamlit run app.py
+   ```
+6. Open your browser and navigate to `http://localhost:8501` to interact with the dashboards.
+
+---
+
+## 14. Author
+- **Name**: [Your Name]  
+- **GitHub**: [github.com/yourusername](https://github.com/yourusername)  
+- **LinkedIn**: [linkedin.com/in/yourusername](https://linkedin.com/in/yourusername)
+
+---
+
+## 15. License
+This project is licensed under the MIT License - see the standard [MIT License](https://opensource.org/licenses/MIT) terms for details.
+=======
+# 📈 Key Performance Indicators (KPIs)
+
+The platform focuses on operational and maintenance KPIs such as:
+
+- Machine Failure Rate
+- Average Tool Wear
+- Average Torque
+- Average Rotational Speed
+- Average Operating Temperature
+- Failure Distribution
+- Failure by Product Type
+- Failure by Failure Mode
+- Machine Health Score (Derived)
+- Risk Score (Derived)
+
+---
 
