@@ -1,0 +1,129 @@
+{
+  "total_records": 10000,
+  "missing_values": {
+    "UDI": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "Product ID": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "Type": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "Air temperature [K]": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "Process temperature [K]": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "Rotational speed [rpm]": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "Torque [Nm]": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "Tool wear [min]": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "Machine failure": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "TWF": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "HDF": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "PWF": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "OSF": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "RNF": {
+      "count": 0,
+      "percentage": 0.0
+    }
+  },
+  "duplicates": {
+    "duplicate_rows_count": 0,
+    "duplicate_product_ids_count": 0
+  },
+  "data_types": {
+    "UDI": "int64",
+    "Product ID": "str",
+    "Type": "str",
+    "Air temperature [K]": "float64",
+    "Process temperature [K]": "float64",
+    "Rotational speed [rpm]": "int64",
+    "Torque [Nm]": "float64",
+    "Tool wear [min]": "int64",
+    "Machine failure": "int64",
+    "TWF": "int64",
+    "HDF": "int64",
+    "PWF": "int64",
+    "OSF": "int64",
+    "RNF": "int64"
+  },
+  "invalid_categories": {
+    "Type": {
+      "invalid_found": false,
+      "values": []
+    },
+    "Machine failure": {
+      "invalid_found": false,
+      "values": []
+    }
+  },
+  "range_violations": {
+    "Air temperature [K]": {
+      "under_range_count": 0,
+      "over_range_count": 0,
+      "min_checked": 290.0,
+      "max_checked": 310.0
+    },
+    "Process temperature [K]": {
+      "under_range_count": 0,
+      "over_range_count": 0,
+      "min_checked": 300.0,
+      "max_checked": 320.0
+    },
+    "Rotational speed [rpm]": {
+      "under_range_count": 0,
+      "over_range_count": 0,
+      "min_checked": 1000.0,
+      "max_checked": 3000.0
+    },
+    "Torque [Nm]": {
+      "under_range_count": 0,
+      "over_range_count": 0,
+      "min_checked": 0.0,
+      "max_checked": 100.0
+    },
+    "Tool wear [min]": {
+      "under_range_count": 0,
+      "over_range_count": 0,
+      "min_checked": 0.0,
+      "max_checked": 300.0
+    }
+  },
+  "completeness_percentage": 100.0,
+  "consistency_checks": {
+    "failures_without_flags_count": 9,
+    "flags_without_failure_count": 18,
+    "flag_definitions_consistent": false
+  }
+}

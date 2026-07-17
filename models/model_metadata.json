@@ -1,0 +1,113 @@
+{
+  "LogisticRegression": {
+    "model_name": "LogisticRegression",
+    "version": "v1",
+    "training_timestamp": "2026-07-16 16:58:55Z",
+    "features_used": [
+      "Ambient_Room_Temp_C",
+      "Internal_Device_Temp_C",
+      "Cooling_Fan_Speed_RPM",
+      "Motor_Load_Nm",
+      "Operating_Hours",
+      "Temp_Diff",
+      "Utilization_Pct",
+      "Failure_Risk_Index"
+    ],
+    "hyperparameters": {
+      "max_iter": 1000,
+      "C": 1.0,
+      "solver": "liblinear",
+      "random_state": 42
+    },
+    "metrics": {
+      "accuracy": 0.9695,
+      "precision": 0.6666666666666666,
+      "recall": 0.20588235294117646,
+      "f1_score": 0.3146067415730337,
+      "roc_auc": 0.9296294604798441
+    },
+    "feature_importances": null,
+    "permutation_importances": null
+  },
+  "RandomForest": {
+    "model_name": "RandomForest",
+    "version": "v1",
+    "training_timestamp": "2026-07-16 16:59:02Z",
+    "features_used": [
+      "Ambient_Room_Temp_C",
+      "Internal_Device_Temp_C",
+      "Cooling_Fan_Speed_RPM",
+      "Motor_Load_Nm",
+      "Operating_Hours",
+      "Temp_Diff",
+      "Utilization_Pct",
+      "Failure_Risk_Index"
+    ],
+    "hyperparameters": {
+      "n_estimators": 100,
+      "max_depth": 10,
+      "min_samples_split": 5,
+      "random_state": 42,
+      "class_weight": "balanced"
+    },
+    "metrics": {
+      "accuracy": 0.975,
+      "precision": 0.5882352941176471,
+      "recall": 0.8823529411764706,
+      "f1_score": 0.7058823529411765,
+      "roc_auc": 0.9757870539520156
+    },
+    "feature_importances": {
+      "Motor_Load_Nm": 0.2571671588554338,
+      "Cooling_Fan_Speed_RPM": 0.24873318504796443,
+      "Operating_Hours": 0.13596559707301925,
+      "Failure_Risk_Index": 0.13567951659178126,
+      "Temp_Diff": 0.0833297241362641,
+      "Utilization_Pct": 0.06756023577497335,
+      "Ambient_Room_Temp_C": 0.04448122762677579,
+      "Internal_Device_Temp_C": 0.027083354893788093
+    },
+    "permutation_importances": {
+      "Cooling_Fan_Speed_RPM": 0.022149999999999993,
+      "Temp_Diff": 0.01419999999999998,
+      "Motor_Load_Nm": 0.009799999999999965,
+      "Utilization_Pct": -0.0008500000000000285,
+      "Internal_Device_Temp_C": -0.0013000000000000234,
+      "Ambient_Room_Temp_C": -0.0033500000000000196,
+      "Failure_Risk_Index": -0.005900000000000028,
+      "Operating_Hours": -0.007150000000000034
+    }
+  },
+  "XGBoost": {
+    "model_name": "XGBoost",
+    "version": "v1",
+    "training_timestamp": "2026-07-16 16:59:02Z",
+    "features_used": [
+      "Ambient_Room_Temp_C",
+      "Internal_Device_Temp_C",
+      "Cooling_Fan_Speed_RPM",
+      "Motor_Load_Nm",
+      "Operating_Hours",
+      "Temp_Diff",
+      "Utilization_Pct",
+      "Failure_Risk_Index"
+    ],
+    "hyperparameters": {
+      "n_estimators": 100,
+      "max_depth": 5,
+      "learning_rate": 0.1,
+      "random_state": 42,
+      "use_label_encoder": false,
+      "eval_metric": "logloss"
+    },
+    "metrics": {
+      "accuracy": 0.987,
+      "precision": 0.8888888888888888,
+      "recall": 0.7058823529411765,
+      "f1_score": 0.7868852459016393,
+      "roc_auc": 0.9764644988430156
+    },
+    "feature_importances": null,
+    "permutation_importances": null
+  }
+}
